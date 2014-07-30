@@ -48,7 +48,7 @@ main(int argc, char *argv[]) {
 	string = argv[0];
 	slen = strlen(string);
 
-	pos = strtonum(argv[1], 0, slen + 1, &errstr);
+	pos = strtonum(argv[1], 1, slen + 1, &errstr);
 	if (errstr)
 		errx(1, "pos is %s", errstr);
 
