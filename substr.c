@@ -40,19 +40,25 @@ main(int argc, char *argv[]) {
 	argc -= optind;
 	argv += optind;
 
-	if (argc != 3 || argv[0] == NULL) {
+	if (argc < 2 || argc > 3 || argv[0] == NULL) {
 		usage();
 		/* NOTREACHED */
 	}
 
 	string = argv[0];
 	slen = strlen(string);
+
 	pos = strtonum(argv[1], 0, slen + 1, &errstr);
 	if (errstr)
 		errx(1, "pos is %s", errstr);
-	length = strtonum(argv[2], 1, slen - pos + 1, &errstr);
-	if (errstr)
-		errx(1, "length is %s", errstr);
+
+	if (argc == 2) {
+		length = slen - pos + 1;
+	} else {
+		length = strtonum(argv[2], 1, slen - pos + 1, &errstr);
+		if (errstr)
+			errx(1, "length is %s", errstr);
+	}
 
 	string = string + pos - 1;
 	string[length] = '\0';

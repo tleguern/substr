@@ -24,7 +24,7 @@
 .Nm
 .Ar string
 .Ar pos
-.Ar length
+.Op Ar length
 .Sh DESCRIPTION
 The
 .Nm
@@ -43,6 +43,14 @@ which should not be greater than the size of
 The numbering of
 .Ar pos
 starts at one, not zero.
+.Pp
+If
+.Ar length
+is not supplied, the substring starting from
+.Ar pos
+to the end of 
+.Ar string
+will be returned.
 .Sh EXIT STATUS
 .Ex -std
 .Sh SEE ALSO
