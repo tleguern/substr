@@ -53,6 +53,29 @@ to the end of
 will be returned.
 .Sh EXIT STATUS
 .Ex -std
+.Sh COMPATIBILITY
+This section provides a list of compatibility issues between
+.Nm
+and the original GNU extension to
+.Xr expr 1 .
+.Pp
+The following behaviours differ from the canonical implementation:
+.Pp
+.Bl -dash -compact
+.It
+The parameters
+.Ar pos
+and
+.Ar length
+should always be positive;
+.It
+The third parameter,
+.Ar length ,
+is optional;
+.It
+.Nm
+never returns with a value of 2 or 3.
+.El
 .Sh SEE ALSO
 .Xr expr 1
 .Sh HISTORY
