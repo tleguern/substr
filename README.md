@@ -16,4 +16,5 @@ Example
     he
     $ substr "Omelette du fromage" 13 7
     fromage
-
+    $ substr toto 2
+    oto
