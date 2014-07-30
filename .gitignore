@@ -21,3 +21,10 @@
 *.i*86
 *.x86_64
 *.hex
+
+# Mandoc
+substr.1.manlint
+
+# Other
+.*
+substr
