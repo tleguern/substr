@@ -1,4 +1,5 @@
-PROG=substr
+PROG= substr
+BINDIR?= /usr/local/bin
 
 test: all
 	cd regress && make
