@@ -20,7 +20,11 @@
 #include <string.h>
 #include <unistd.h>
 
-__dead void usage(void);
+#ifdef NEED_LIBBSD
+# include <bsd/stdlib.h>
+#endif
+
+void usage(void);
 
 int
 main(int argc, char *argv[]) {
@@ -67,7 +71,7 @@ main(int argc, char *argv[]) {
 	return 0;
 }
 
-__dead void
+void
 usage(void) {
 	(void)fprintf(stderr, "usage: %s string pos length\n", getprogname());
 	exit(1);
