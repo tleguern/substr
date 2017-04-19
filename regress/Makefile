@@ -1,6 +1,3 @@
-REGRESS_TARGETS = run_test
+test:
+	/bin/sh substr.sh > /dev/null 2> /dev/null
 
-run_test:
-	/bin/sh $(.CURDIR)/substr.sh > /dev/null 2> /dev/null
-
-.include <bsd.regress.mk>
