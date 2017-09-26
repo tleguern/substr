@@ -12,7 +12,7 @@ t() {
 	# $3 -> $test expression
 	echo "Run $substr \"$3\", expect exit code $1 and string \"$2\""
 
-	ret="`$substr $3`"
+	ret=$($substr $3)
 	if [ $? -ne $1 ]; then
 		failed
 		return
