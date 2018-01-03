@@ -1,3 +1,3 @@
 test:
-	/bin/sh substr.sh > /dev/null 2> /dev/null
+	/bin/sh substr.sh
 
