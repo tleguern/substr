@@ -5,12 +5,16 @@ INSTALL_PROGRAM?= install -m 0555
 INSTALL_MAN?= install -m 0444
 DESTDIR?=/usr/local/
 BINDIR?=bin/
+MANDIR?=man/
 
-.SUFFIXES: .c .o
+.SUFFIXES: .c .o .1 .md
 .PHONY: clean install
 
 .c.o:
 	${CC} ${CFLAGS} -c $<
+
+.1.md:
+	mandoc -T markdown $@ > $<
 
 ${PROG}: ${PROG}.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ ${PROG}.o ${LDADD}
