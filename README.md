@@ -1,30 +1,40 @@
-substr
-======
+# substr
 
 An utility to extract substring from a string, inspired by the GNU
 `expr` extension of the same name. This implementation is under
 the ISC licence.
 
-Read the man page for more information with either `mandoc(1)` or `groff(1)`:
+## Contents
 
-    $ mandoc substr.1 | less
-    $ groff -m mdoc -Tascii substr.1 | less
+1. [Install](#install)
+2. [Instructions](#instruction)
+3. [Examples](#examples)
+4. [License](#license)
 
-In order to run on Linux systems the libbsd package should be installed first.
+## Install
 
-Installation
-------------
+### Requires
+
+* C compiler ;
+* libbsd on Linux.
+
+### Build
 
 On OpenBSD:
 
-    $ make && doas make install
+    $ make
+    $ DESTDIR=~/ make install # or doas make install
 
 On Linux:
 
-    $ LDADD=-lbsd CFLAGS="-D NEED_LIBBSD" make && sudo make install
+    $ LDADD=-lbsd CFLAGS="-D NEED_LIBBSD" make
+    $ DESTDIR=~/ make install # or sudo make install
 
-Example
--------
+## Instructions
+
+To see a description of the options see the [man](./substr.md) page.
+
+## Example
 
     $ substr hello 1 2
     he
@@ -32,3 +42,7 @@ Example
     fromage
     $ substr toto 2
     oto
+
+## License
+
+All the code is licensed under the ISC License.
